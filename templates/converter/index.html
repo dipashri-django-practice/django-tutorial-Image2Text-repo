@@ -1,0 +1,11 @@
+<!-- converter/templates/converter/format_preserve.html -->
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form }}
+  <button type="submit">Upload</button>
+</form>
+
+{% if html_text %}
+  <hr>
+  <div>{{ html_text|safe }}</div>
+{% endif %}

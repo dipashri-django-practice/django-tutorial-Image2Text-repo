@@ -17,8 +17,9 @@ Including another URLconf
 # image2text/urls.py
 from django.conf import settings
 from django.conf.urls.static import static
-from django.urls import path,include
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('', include('img2txtapp.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', views.extract_text, name='extract_text'),
+] 
